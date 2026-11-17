@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chai &amp; Chowk Cafe</title>
+<!--
+  HOW TO USE YOUR OWN IMAGES
+  Put your pictures in this same folder and name them exactly:
+    hero.jpg    -> big top picture
+    about.jpg   -> picture in the "Our story" section
+    food1.jpg   food2.jpg   food3.jpg   food4.jpg   food5.jpg   food6.jpg   -> menu / gallery
+  (If your file is .png, just change .jpg to .png in this file.)
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf6ee;--ink:#2b1d14;--soft:#6e5a4b;--accent:#1f6f5c;--card:#fff;--line:#e8dccb}
+@media (prefers-color-scheme:dark){:root{--bg:#1a120d;--ink:#f6ece0;--soft:#bba995;--accent:#4fc3a1;--card:#261a13;--line:#3b2b20}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:var(--bg);border-bottom:1px solid var(--line)}
+.logo{font-family:Fraunces,serif;font-weight:800;font-size:1.3rem;text-decoration:none}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:600}
+nav a:hover{color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:60px 5vw;max-width:1200px;margin:auto}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800}
+.hero p{margin:18px 0 26px;color:var(--soft);max-width:46ch;font-size:1.1rem}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:13px 26px;border-radius:999px;font-weight:700;text-decoration:none}
+.btn:hover{filter:brightness(1.1)}
+img{display:block;width:100%;object-fit:cover;background:var(--line);border-radius:18px}
+.hero img{aspect-ratio:4/5;border-radius:200px 200px 18px 18px}
+section{padding:70px 5vw;max-width:1200px;margin:auto}
+section h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about img{aspect-ratio:1/1}
+.about p{color:var(--soft);margin-bottom:12px;max-width:55ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:28px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.item img{aspect-ratio:4/3;border-radius:0}
+.item div{padding:16px 18px 20px}
+.item h3{display:flex;justify-content:space-between;gap:10px;font-size:1.2rem}
+.item span{color:var(--accent);font-family:Nunito,sans-serif;font-weight:700}
+.item p{color:var(--soft);font-size:.95rem;margin-top:4px}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:30px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:40px;margin:30px auto 70px;max-width:1100px}
+.visit p{color:var(--soft)}
+.visit strong{color:var(--ink)}
+footer{text-align:center;padding:28px;color:var(--soft);border-top:1px solid var(--line);font-size:.9rem}
+@media(max-width:760px){.hero,.about,.visit{grid-template-columns:1fr}.hero img{aspect-ratio:4/3;border-radius:18px}.visit{padding:24px;margin-inline:5vw}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#top">Chai &amp; Chowk</a>
+  <nav>
+    <a href="#about">Our story</a>
+    <a href="#menu">Menu</a>
+    <a href="#visit">Visit us</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div>
+      <h1>Fresh chai, warm snacks, slow mornings.</h1>
+      <p>A neighbourhood cafe where every cup is brewed to order and every plate is made from scratch.</p>
+      <a class="btn" href="#menu">See the menu</a>
+    </div>
+    <img src="hero.jpg" alt="Inside our cafe">
+  </div>
+
+  <section id="about" class="about">
+    <img src="about.jpg" alt="Our kitchen and team">
+    <div>
+      <h2>Our story</h2>
+      <p>We opened with one stove, one kettle and a simple idea: serve food the way it is made at home.</p>
+      <p>Today we still grind our own spices and bake every morning. Come as you are, stay as long as you like.</p>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2>Menu favourites</h2>
+    <p style="color:var(--soft)">Change the names and prices below to match your menu.</p>
+    <div class="grid">
+      <article class="item"><img src="food1.jpg" alt="Masala chai"><div><h3>Masala chai <span>₹40</span></h3><p>Ginger, cardamom and fresh milk.</p></div></article>
+      <article class="item"><img src="food2.jpg" alt="Cold coffee"><div><h3>Cold coffee <span>₹90</span></h3><p>Slow-brewed and served over ice.</p></div></article>
+      <article class="item"><img src="food3.jpg" alt="Veg sandwich"><div><h3>Veg sandwich <span>₹80</span></h3><p>Grilled with green chutney and cheese.</p></div></article>
+      <article class="item"><img src="food4.jpg" alt="Samosa"><div><h3>Samosa plate <span>₹50</span></h3><p>Two crisp samosas with tamarind chutney.</p></div></article>
+      <article class="item"><img src="food5.jpg" alt="Fresh pasta"><div><h3>Creamy pasta <span>₹150</span></h3><p>White sauce, herbs and garlic bread.</p></div></article>
+      <article class="item"><img src="food6.jpg" alt="Chocolate cake"><div><h3>Chocolate cake <span>₹110</span></h3><p>Baked fresh every morning.</p></div></article>
+    </div>
+  </section>
+</main>
+
+<section id="visit" class="visit">
+  <div>
+    <h2>Visit us</h2>
+    <p>Your street name, Your city<br>Your pincode</p>
+  </div>
+  <div>
+    <p><strong>Open every day</strong><br>8:00 am – 10:00 pm</p>
+    <p style="margin-top:12px"><strong>Call</strong><br>+91 00000 00000</p>
+  </div>
+</section>
+
+<footer>© 2026 Chai &amp; Chowk Cafe</footer>
+</body>
+</html>
